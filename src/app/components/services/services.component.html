@@ -1,1 +1,106 @@
-<p>services works!</p>
+<div *ngIf="loading" class="content d-flex justify-content-center align-items-center">
+
+    <div class="spinner-border text-warning" style="width: 8rem; height: 8rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+
+</div>
+
+<div *ngIf="!loading">
+
+    <div class="content-small bg">
+
+        <app-navbar></app-navbar>
+
+        <div class="container p-5">
+            <div class="pb-5" role="alert">
+                <h2 class="">BIENVENIDOS A NUESTRO PORTAL DE SERVICIOS EN LINEA</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="content shadow" style="background-color: #edb10d">
+
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <nav class="navbar navbar-expand-lg navbar-light bg-secondary ">
+                    <div class="container-fluid ">
+                        <a class="navbar-brand " href="# ">
+                            <img src="assets/img/globe.png " alt=" ">
+                        </a>
+                        <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarNavAltMarkup " aria-controls="navbarNavAltMarkup " aria-expanded="false " aria-label="Toggle navigation ">
+                            <span class="navbar-toggler-icon "></span>
+                        </button>
+                        <div class="collapse navbar-collapse " id="navbarNavAltMarkup ">
+                            <div class="navbar-nav ">
+                                <a class="nav-link active text-white " aria-current="page " href="# ">Matriculacion</a>
+                                <a class="nav-link text-white " href="# ">| Permiso Provicional</a>
+                                <a class="nav-link text-white " href="# ">| Renovacion, duplicado y cambios en la matricula</a>
+                                <a class="nav-link text-white " href="# ">| Carta de no Objecion</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <input type="text " class="form-control p-3 " placeholder="Buscar servicio ">
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center pt-5">
+            <div class="col-8">
+                <h5 class="text-center text-dark">LISTADO DE SERVICIOS</h5>
+                <hr>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="shadow rounded bg-white">
+                            <div class="bg- shadow p-2 text-center text-secondary" style="width: 100%;">
+                                INFORMATIVO
+                            </div>
+                            <div class="p-4 text-center">
+                                <h5>Certificación de No Deuda</h5>
+                            </div>
+                            <div class="pb text-center">
+                                <button class="col-12 btn btn-secondary">VER INFORMACION</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="shadow rounded bg-white">
+                            <div class="bg- shadow p-2 text-center text-secondary" style="width: 100%;">
+                                INFORMATIVO
+                            </div>
+                            <div class="p-4 text-center">
+                                <h5>Certificación de No Deuda</h5>
+                            </div>
+                            <div class="pb text-center">
+                                <button class="col-12 btn btn-secondary">VER INFORMACION</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="shadow rounded bg-white">
+                            <div class="bg- shadow p-2 text-center text-secondary" style="width: 100%;">
+                                INFORMATIVO
+                            </div>
+                            <div class="p-4 text-center">
+                                <h5>Certificación de No Deuda</h5>
+                            </div>
+                            <div class="pb text-center">
+                                <button class="col-12 btn btn-secondary">VER INFORMACION</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

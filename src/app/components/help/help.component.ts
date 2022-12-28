@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-services',
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.css']
+  selector: 'app-help',
+  templateUrl: './help.component.html',
+  styleUrls: ['./help.component.css']
 })
-export class ServicesComponent implements OnInit {
+export class HelpComponent implements OnInit {
 
   loading: boolean = false;
 

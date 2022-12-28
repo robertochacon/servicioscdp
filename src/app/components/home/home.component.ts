@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       this.loading = false;
-    }, 2000);
+    }, 1000);
   }
 
 }
