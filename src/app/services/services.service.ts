@@ -12,7 +12,7 @@ export class ServicesService {
   constructor(private http: HttpClient) {}
 
   getAllServices(): Observable<any>{
-    return this.http.get("services.json");
+    return this.http.get("assets/json/services.json");
   }
 
 

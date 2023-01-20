@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from 'src/app/services/services.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 
 @Component({
@@ -11,8 +13,12 @@ export class ServicesComponent implements OnInit {
 
   loading: boolean = false;
   services: any[] = [];
+  action: string = 'list';
+  serviceSelected: any;
+  serviceContent!: SafeResourceUrl;
+  searchItem: any = '';
 
-  constructor(private _serviceService: ServicesService) { }
+  constructor(private _serviceService: ServicesService, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.loading = true;
@@ -29,6 +35,13 @@ export class ServicesComponent implements OnInit {
     }, error=>{
         this.services = []
     })
+  }
+
+  detailsService(param: any){
+    console.log(param);
+    this.action = 'details';
+    this.serviceSelected = param;
+    this.serviceContent = this.sanitizer.bypassSecurityTrustResourceUrl(param.content);
   }
 
 }

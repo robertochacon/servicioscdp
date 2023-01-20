@@ -6,7 +6,7 @@
 
 </div>
 
-<div *ngIf="!loading">
+<div class="row " *ngIf="!loading">
 
     <div class="content-small bg">
 
@@ -14,93 +14,73 @@
 
         <div class="container p-5">
             <div class="pb-5" role="alert">
-                <h2 class="">SERVICIOS</h2>
+                <h2 class="" *ngIf="action=='list'">SERVICIOS</h2>
+                <h2 class="" *ngIf="action=='details'">Detalles de servicio</h2>
             </div>
         </div>
 
     </div>
 
-    <div class="content shadow" style="background-color: #edb10d">
+    <div *ngIf="action=='list'" class="content shadow" style="background-color: #edb10d">
 
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <nav class="navbar navbar-expand-lg navbar-light bg-secondary ">
-                    <div class="container-fluid ">
-                        <a class="navbar-brand " href="# ">
-                            <img src="assets/img/globe.png " alt=" ">
-                        </a>
-                        <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarNavAltMarkup " aria-controls="navbarNavAltMarkup " aria-expanded="false " aria-label="Toggle navigation ">
-                            <span class="navbar-toggler-icon "></span>
-                        </button>
-                        <div class="collapse navbar-collapse " id="navbarNavAltMarkup ">
-                            <div class="navbar-nav ">
-                                <a class="nav-link active text-white " aria-current="page " href="# ">Matriculacion</a>
-                                <a class="nav-link text-white " href="# ">| Permiso Provicional</a>
-                                <a class="nav-link text-white " href="# ">| Renovacion, duplicado y cambios en la matricula</a>
-                                <a class="nav-link text-white " href="# ">| Carta de no Objecion</a>
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-secondary ">
+                        <div class="container-fluid ">
+                            <a class="navbar-brand " href="# ">
+                                <img src="assets/img/globe.png " alt=" ">
+                            </a>
+                            <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarNavAltMarkup " aria-controls="navbarNavAltMarkup " aria-expanded="false " aria-label="Toggle navigation ">
+                                <span class="navbar-toggler-icon "></span>
+                            </button>
+                            <div class="collapse navbar-collapse " id="navbarNavAltMarkup ">
+                                <div class="navbar-nav ">
+                                    <a class="nav-link active text-white " aria-current="page " href="# ">Matriculacion</a>
+                                    <a class="nav-link text-white " href="# ">| Permiso Provicional</a>
+                                    <a class="nav-link text-white " href="# ">| Renovacion, duplicado y cambios en la matricula</a>
+                                    <a class="nav-link text-white " href="# ">| Carta de no Objecion</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </nav>
-                <input type="text " class="form-control p-3 " placeholder="Buscar servicio ">
+                    </nav>
+                    <input type="text" [(ngModel)]="searchItem" class="form-control p-3 " placeholder="Buscar servicio ">
+                </div>
+
             </div>
 
-        </div>
+            <div class="row justify-content-center pt-5">
+                <div class="col-8">
+                    <h5 class="text-center text-dark">LISTADO DE SERVICIOS</h5>
+                    <hr>
 
-        <div class="row justify-content-center pt-5">
-            <div class="col-8">
-                <h5 class="text-center text-dark">LISTADO DE SERVICIOS</h5>
-                <hr>
-
-                <div class="row justify-content-center">
-
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <div class="shadow rounded bg-white">
-                            <div class="bg- shadow p-2 text-center text-secondary" style="width: 100%;">
-                                INFORMATIVO
-                            </div>
-                            <div class="p-4 text-center">
-                                <h5>Certificación de No Deuda</h5>
-                            </div>
-                            <div class="pb text-center">
-                                <button class="col-12 btn btn-secondary">VER INFORMACION</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <div class="shadow rounded bg-white">
-                            <div class="bg- shadow p-2 text-center text-secondary" style="width: 100%;">
-                                INFORMATIVO
-                            </div>
-                            <div class="p-4 text-center">
-                                <h5>Certificación de No Deuda</h5>
-                            </div>
-                            <div class="pb text-center">
-                                <button class="col-12 btn btn-secondary">VER INFORMACION</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-4 col-sm-6">
-                        <div class="shadow rounded bg-white">
-                            <div class="bg- shadow p-2 text-center text-secondary" style="width: 100%;">
-                                INFORMATIVO
-                            </div>
-                            <div class="p-4 text-center">
-                                <h5>Certificación de No Deuda</h5>
-                            </div>
-                            <div class="pb text-center">
-                                <button class="col-12 btn btn-secondary">VER INFORMACION</button>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-4 col-sm-6 mt-3" *ngFor="let service of services | searchArticle: searchItem">
+                            <div class="shadow rounded bg-white">
+                                <div class="bg- shadow p-2 text-center text-secondary" style="width: 100%;">
+                                    INFORMATIVO
+                                </div>
+                                <div class="p-4 text-center">
+                                    <h5>{{ service.nombre }}</h5>
+                                </div>
+                                <div class="pb text-center">
+                                    <button class="col-12 btn btn-secondary" (click)="detailsService(service)">VER INFORMACION</button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-
             </div>
         </div>
 
+    </div>
+
+    <div class="mt-3" *ngIf="action=='details'" style="max-width: 1200px; margin: auto;">
+        <div style="padding-bottom: 20px;background-color:white;margin-bottom:-50px;z-index:2; position: absolute;width:100%;max-width: 1200px;">
+            <h1 class="text-center">{{ serviceSelected.nombre }}</h1>
+        </div>
+        <iframe *ngIf="serviceSelected.content != ''" [src]="serviceContent" frameborder="0" width="100%" height="600px" style="z-index:1;"></iframe>
     </div>
 
 </div>

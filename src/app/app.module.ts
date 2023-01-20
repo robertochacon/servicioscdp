@@ -9,6 +9,8 @@ import { ServicesComponent } from './components/services/services.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { GuideComponent } from './components/guide/guide.component';
 import { HelpComponent } from './components/help/help.component';
+import { SearchArticlePipe } from './components/services/search-article.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { HelpComponent } from './components/help/help.component';
     ServicesComponent,
     NavbarComponent,
     GuideComponent,
-    HelpComponent
+    HelpComponent,
+    SearchArticlePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
